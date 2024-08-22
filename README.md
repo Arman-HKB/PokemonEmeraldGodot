@@ -1,13 +1,25 @@
 # PokemonEmeraldGodot 
-Pokemon Emerald made with Godot 4.1.1 - One day when I was playing with Godot, learning how to use it. I thought why not remaking this classic game!
+Pokemon Emerald made with Godot (4.1.1). One day when I was playing with Godot, learning how to use it. I thought why not remaking this classic game!
 
 ⚠️THIS REPO DO NOT CONTAIN COPYRIGHTED ASSETS⚠️
 
-![Start](https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/start.gif)
-![Littleroot](https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/littleroot.gif)
-![Menu](https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/menu.gif)
-![Map](https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/map.png)
-![House in](https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/mays_chamber.png)
+  <table>
+    <tr>
+      <td>
+        <img src="https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/start.gif" style="width:100%">
+      </td>
+      <td>
+        <img src="https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/littleroot.gif" style="width:100%">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img src="https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/menu.gif" style="width:100%">
+      </td>
+    </tr>
+  </table>
+<img src="https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/map.png" style="width:100%">
+<img src="https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/mays_chamber.png" style="width:100%">
 
 ## DONE & TODO
 - ☑ Menu
@@ -29,6 +41,14 @@ Pokemon Emerald made with Godot 4.1.1 - One day when I was playing with Godot, l
   git clone URL
 ```
 **Step 2** Open the project in Godot (minimum version 4.1.1)
+
+**Controls** 
+Enter key : Start
+
+Z key : A
+
+X key : B
+
 
 ## Authors
 - Main Creator [@Arman-HKB](https://www.github.com/https://github.com/Arman-HKB)
