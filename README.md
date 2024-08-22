@@ -1,5 +1,5 @@
 # PokemonEmeraldGodot 
-Pokemon Emerald made with Godot (4.1.1). One day when I was playing with Godot, learning how to use it. I thought why not remaking this classic game!
+Pokemon Emerald made with Godot (4.1.1). One day when I was playing with Godot, learning how to use it. I thought why not remaking this classic game! So I extracted all the assets from the original game and started code. I stopped before finishing the battle feature. This repository doesn't contain copyrighted assets, all of theme are pixelated. All credit to Nintedo.
 
 ⚠️THIS REPO DO NOT CONTAIN COPYRIGHTED ASSETS⚠️
 
@@ -42,7 +42,8 @@ Pokemon Emerald made with Godot (4.1.1). One day when I was playing with Godot, 
 ```
 **Step 2** Open the project in Godot (minimum version 4.1.1)
 
-**Controls** 
+**Controls :** 
+
 Enter key : Start
 
 Z key : A
