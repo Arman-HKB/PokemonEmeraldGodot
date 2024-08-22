@@ -1,0 +1,130 @@
+[gd_scene load_steps=5 format=3 uid="uid://dne0d8s82ydcp"]
+
+[ext_resource type="Texture2D" uid="uid://cct6b1s3xhoim" path="res://Assets/UI/menu_box.png" id="1_8prue"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_nvn1j"]
+[ext_resource type="FontFile" uid="uid://ctb24xa04mkmg" path="res://Assets/UI/pkmnfl.ttf" id="2_5352u"]
+[ext_resource type="Texture2D" uid="uid://cbqev0c2bcgws" path="res://Assets/UI/ui_arrow_left_right.png" id="2_p8pn5"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_nvn1j")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -88.0
+offset_top = 1.0
+offset_right = -18.0
+offset_bottom = 143.0
+grow_horizontal = 0
+scale = Vector2(1.24, 1)
+texture = ExtResource("1_8prue")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -51.0
+offset_right = 66.0
+offset_bottom = 51.0
+grow_vertical = 2
+theme_override_constants/separation = 3
+metadata/_edit_group_ = true
+
+[node name="PokedexLabel" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+modulate = Color(1, 1, 1, 0.607843)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("2_5352u")
+theme_override_font_sizes/font_size = 12
+text = "POKéDEX"
+
+[node name="PokemonLabel" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("2_5352u")
+theme_override_font_sizes/font_size = 12
+text = "POKéMON"
+
+[node name="BagLabel" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("2_5352u")
+theme_override_font_sizes/font_size = 12
+text = "BAG"
+
+[node name="PlayerNameLabel" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+modulate = Color(1, 1, 1, 0.607843)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("2_5352u")
+theme_override_font_sizes/font_size = 12
+text = "MAY"
+
+[node name="SaveLabel" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+modulate = Color(1, 1, 1, 0.607843)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("2_5352u")
+theme_override_font_sizes/font_size = 12
+text = "SAVE"
+
+[node name="OptionLabel" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+modulate = Color(1, 1, 1, 0.607843)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("2_5352u")
+theme_override_font_sizes/font_size = 12
+text = "OPTION"
+
+[node name="ExitLabel" type="Label" parent="Control/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("2_5352u")
+theme_override_font_sizes/font_size = 12
+text = "EXIT"
+
+[node name="Cursor" type="TextureRect" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 20.0
+offset_right = 14.0
+offset_bottom = 30.0
+texture = ExtResource("2_p8pn5")

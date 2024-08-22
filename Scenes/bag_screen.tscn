@@ -1,0 +1,277 @@
+[gd_scene load_steps=14 format=3 uid="uid://cbfbrih3a35i0"]
+
+[ext_resource type="Script" path="res://Scripts/bag.gd" id="1_aqoho"]
+[ext_resource type="Texture2D" uid="uid://bt7ukqjknvsiq" path="res://Assets/UI/Bag/background.png" id="1_ttm5j"]
+[ext_resource type="Texture2D" uid="uid://bx0fv3j73gsm6" path="res://Assets/UI/Bag/close_bag_icon.png" id="2_a0h1h"]
+[ext_resource type="Texture2D" uid="uid://pq7val6aex2k" path="res://Assets/UI/Bag/section_arrow.png" id="2_b2uy2"]
+[ext_resource type="Texture2D" uid="uid://cjnw3f1hetf6r" path="res://Assets/UI/Bag/spinning_ball.png" id="3_03gi6"]
+[ext_resource type="Texture2D" uid="uid://dy15hhwlgri4n" path="res://Assets/UI/Bag/section_marker.png" id="3_7nd83"]
+[ext_resource type="Texture2D" uid="uid://rerxkn6tho22" path="res://Assets/UI/Bag/bag_cursor.png" id="3_afjik"]
+[ext_resource type="Texture2D" uid="uid://ck5vb0euluso8" path="res://Assets/UI/Bag/bag.png" id="3_mjwc3"]
+
+[sub_resource type="Animation" id="Animation_3vko5"]
+resource_name = "Next"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpinningBall:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1.94482e-05),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BagIcon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1e-05, 1),
+"update": 0,
+"values": [Vector2(36, 34), Vector2(36, 31), Vector2(36, 34)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"hide_arrows"
+}, {
+"args": [],
+"method": &"show_arrows"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItemIcon:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_jbx1l"]
+resource_name = "Previous"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpinningBall:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1.94482e-05),
+"update": 0,
+"values": [0.0, -6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BagIcon:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1e-05, 1),
+"update": 0,
+"values": [Vector2(36, 34), Vector2(36, 31), Vector2(36, 34)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"hide_arrows"
+}, {
+"args": [],
+"method": &"show_arrows"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ItemIcon:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_wgk1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftSectionArrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(19, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightSectionArrow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(90, 8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpinningBall:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BagIcon:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(36, 34)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ItemIcon:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mqnst"]
+resource_name = "SectionArrowMovement"
+length = 0.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LeftSectionArrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05),
+"update": 0,
+"values": [Vector2(19, 8), Vector2(20, 8), Vector2(21, 8), Vector2(22, 8), Vector2(21, 8), Vector2(20, 8), Vector2(19, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightSectionArrow:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05),
+"update": 0,
+"values": [Vector2(93, 8), Vector2(92, 8), Vector2(91, 8), Vector2(90, 8), Vector2(91, 8), Vector2(92, 8), Vector2(93, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oiekt"]
+_data = {
+"Next": SubResource("Animation_3vko5"),
+"Previous": SubResource("Animation_jbx1l"),
+"RESET": SubResource("Animation_wgk1v"),
+"SectionArrowMovement": SubResource("Animation_mqnst")
+}
+
+[node name="BagScreen" type="Node2D"]
+script = ExtResource("1_aqoho")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("1_ttm5j")
+
+[node name="Cursor" type="TextureRect" parent="."]
+offset_left = 113.0
+offset_top = 20.0
+offset_right = 119.0
+offset_bottom = 30.0
+texture = ExtResource("3_afjik")
+
+[node name="SpinningBall" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("3_03gi6")
+
+[node name="LeftSectionArrow" type="Sprite2D" parent="."]
+position = Vector2(19, 8)
+texture = ExtResource("2_b2uy2")
+centered = false
+
+[node name="RightSectionArrow" type="Sprite2D" parent="."]
+position = Vector2(90, 8)
+texture = ExtResource("2_b2uy2")
+centered = false
+flip_h = true
+
+[node name="SectionMarker" type="Sprite2D" parent="."]
+position = Vector2(40, 24)
+texture = ExtResource("3_7nd83")
+centered = false
+
+[node name="ItemIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, 72)
+texture = ExtResource("2_a0h1h")
+centered = false
+
+[node name="BagIcon" type="Sprite2D" parent="."]
+position = Vector2(36, 34)
+texture = ExtResource("3_mjwc3")
+centered = false
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "SectionArrowMovement"
+libraries = {
+"": SubResource("AnimationLibrary_oiekt")
+}

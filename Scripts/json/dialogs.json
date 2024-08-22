@@ -1,0 +1,54 @@
+[
+	{
+		"id": 1,
+		"dialogs": [
+		  "PROF. BIRCH'S HOUSE"
+		]
+	},
+	{
+		"id": 2,
+		"dialogs": [
+		  "MAY's HOUSE"
+		]
+	},
+	{
+		"id": 3,
+		"dialogs": [
+		  "PROF. BIRCH'S POKéMON LAB"
+		]
+	},
+	{
+		"id": 4,
+		"dialogs": [
+		  "LITTLEROOT TOWN\n\"A town that can't be shaded any hue.\""
+		]
+	},
+	{
+		"id": 5,
+		"dialogs": [
+		  "ROUTE 101\n↑ LITTLEROOT TOWN"
+		]
+	},
+	{
+		"id": 6,
+		"dialogs": [
+		  "Are you going to catch POKéMON?\nGood luck!"
+		]
+	},
+	{
+		"id": 7,
+		"dialogs": [
+		  "If you use a PC, you can store items and POKéMON.",
+		  "The power of science is staggering!"
+		]
+	},
+	{
+		"id": 8,
+		"dialogs": [
+		  "PROF. BIRCH speds days in his LAB studying, then he'll suddenly go out in",
+		  "the wid to more research...",
+		  "When does PROF. BIRCH spend time\nat home?"
+		]
+	}
+	  
+]

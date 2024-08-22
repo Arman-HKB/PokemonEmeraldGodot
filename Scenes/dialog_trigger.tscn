@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dskqmk36pspw1"]
+
+[ext_resource type="Script" path="res://Scripts/dialog_trigger.gd" id="1_jf25w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8selj"]
+size = Vector2(16, 16)
+
+[node name="DialogTrigger" type="Area2D"]
+z_index = 1
+collision_layer = 2
+script = ExtResource("1_jf25w")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_8selj")
+debug_color = Color(0.662745, 0.32549, 0.980392, 0.419608)

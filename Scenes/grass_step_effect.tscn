@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8ih6kha20kxj"]
+
+[ext_resource type="Texture2D" uid="uid://7qb1xjj54mr2" path="res://Assets/Tilesets/grass_step_animation.png" id="1_0dk8i"]
+[ext_resource type="Script" path="res://Scripts/grass_step_effect.gd" id="2_fuio8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1jsc"]
+atlas = ExtResource("1_0dk8i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5plp"]
+atlas = ExtResource("1_0dk8i")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ehns"]
+atlas = ExtResource("1_0dk8i")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2wth"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1jsc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5plp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ehns")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GrassStepEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_u2wth")
+centered = false
+script = ExtResource("2_fuio8")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

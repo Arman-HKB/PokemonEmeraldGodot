@@ -1,0 +1,579 @@
+[gd_scene load_steps=52 format=3 uid="uid://dbdtqnhf87rd0"]
+
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_3yr2n"]
+[ext_resource type="Texture2D" uid="uid://b4bi5uekcufu5" path="res://Assets/Intro/copyright_1.png" id="1_lklwh"]
+[ext_resource type="Texture2D" uid="uid://blktj1n3ckrtc" path="res://Assets/Intro/bike.png" id="1_r8uik"]
+[ext_resource type="Texture2D" uid="uid://dnuh363j41nv6" path="res://Assets/Intro/background_1.png" id="2_gn0v0"]
+[ext_resource type="Texture2D" uid="uid://itlohoedjm7u" path="res://Assets/Intro/background_2.png" id="4_tpn4q"]
+[ext_resource type="Texture2D" uid="uid://bo4ei7swtawbw" path="res://Assets/Intro/rayquaza_yellow_flash.png" id="5_vjq1s"]
+[ext_resource type="Texture2D" uid="uid://cgikbkink1jgc" path="res://Assets/Intro/volbeat.png" id="5_w4vxy"]
+[ext_resource type="Texture2D" uid="uid://bgkhdp22n6qoc" path="res://Assets/Intro/manectric.png" id="6_3l364"]
+[ext_resource type="Texture2D" uid="uid://q76t1gyw3x28" path="res://Assets/Intro/mist.png" id="6_bkgii"]
+[ext_resource type="Texture2D" uid="uid://sau3k5n3xe88" path="res://Assets/Intro/logo.png" id="6_w3eck"]
+[ext_resource type="Shader" path="res://Shaders/mist.gdshader" id="6_ytvca"]
+[ext_resource type="Texture2D" uid="uid://c23mo0civf7pe" path="res://Assets/Intro/version.png" id="7_bnws3"]
+[ext_resource type="Texture2D" uid="uid://peeoc11fsw0j" path="res://Assets/Intro/torchic.png" id="7_kabso"]
+[ext_resource type="Texture2D" uid="uid://bhkmh205ujvsq" path="res://Assets/Intro/flygon.png" id="8_7bioh"]
+[ext_resource type="Texture2D" uid="uid://c7aes7tb1j1jf" path="res://Assets/Intro/press_start.png" id="8_pkjor"]
+[ext_resource type="Texture2D" uid="uid://u4ewxga4jbxc" path="res://Assets/Intro/copyright_2.png" id="9_box72"]
+[ext_resource type="Texture2D" uid="uid://b3qrbqoi1iftc" path="res://Assets/Intro/kyogre_back.png" id="9_pulri"]
+[ext_resource type="Texture2D" uid="uid://b3oyxlthk1vnu" path="res://Assets/Intro/kyogre.png" id="10_m3614"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_angbl"]
+atlas = ExtResource("1_r8uik")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ab123"]
+atlas = ExtResource("1_r8uik")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1d0k"]
+atlas = ExtResource("1_r8uik")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t3tkp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_angbl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab123")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1d0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ab123")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk26p"]
+atlas = ExtResource("5_w4vxy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2o32"]
+atlas = ExtResource("5_w4vxy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x38c3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk26p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2o32")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8vyk"]
+atlas = ExtResource("6_3l364")
+region = Rect2(0, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5fds"]
+atlas = ExtResource("6_3l364")
+region = Rect2(64, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpwmf"]
+atlas = ExtResource("6_3l364")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5sgn"]
+atlas = ExtResource("6_3l364")
+region = Rect2(192, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r7h02"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8vyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5fds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpwmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5sgn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31xkv"]
+atlas = ExtResource("7_kabso")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh3ae"]
+atlas = ExtResource("7_kabso")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_048es"]
+atlas = ExtResource("7_kabso")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6wxw"]
+atlas = ExtResource("7_kabso")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a2k44"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31xkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh3ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_048es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6wxw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_d4n5k"]
+resource_name = "Cycling"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BikeScene/May:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-126, 0), Vector2(0, 0), Vector2(-224, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"next_scene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_jdc8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BikeScene/May:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_33x5d"]
+_data = {
+"Cycling": SubResource("Animation_d4n5k"),
+"RESET": SubResource("Animation_jdc8t")
+}
+
+[sub_resource type="Animation" id="Animation_i68sh"]
+resource_name = "Kyogre"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kyogre:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 0, 1, 2, 0, 3, 6, 9, 12, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kyogre:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 2.8),
+"transitions": PackedFloat32Array(2, 1, 0, 0),
+"update": 0,
+"values": [Vector2(160, -64), Vector2(75, 16), Vector2(75, 35), Vector2(80, -64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Kyogre:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.8, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"next_scene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mi5y8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Kyogre:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Kyogre:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, -64)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Kyogre:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nouq2"]
+_data = {
+"Kyogre": SubResource("Animation_i68sh"),
+"RESET": SubResource("Animation_mi5y8")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fsksf"]
+shader = ExtResource("6_ytvca")
+shader_parameter/direction = Vector2(0, 1)
+shader_parameter/speed = 0.08
+shader_parameter/alpha = 0.5
+
+[sub_resource type="Animation" id="Animation_3ndat"]
+resource_name = "Mist"
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mist:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(-0.5, -0.5, -0.5, -0.5),
+"update": 0,
+"values": [0.0, 0.0349066, 0.0, -0.0349066]
+}
+
+[sub_resource type="Animation" id="Animation_2c7x5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mist:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a5r0c"]
+_data = {
+"Mist": SubResource("Animation_3ndat"),
+"RESET": SubResource("Animation_2c7x5")
+}
+
+[sub_resource type="Animation" id="Animation_pdgc8"]
+resource_name = "Flashes"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YellowFlash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_arfsr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YellowFlash:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PressStart:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqf6o"]
+_data = {
+"Flashes": SubResource("Animation_pdgc8"),
+"RESET": SubResource("Animation_arfsr")
+}
+
+[sub_resource type="Animation" id="Animation_wphr2"]
+resource_name = "PressStart"
+length = 0.3
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressStart:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_5wpdv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PressStart:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iqo1w"]
+_data = {
+"PressStart": SubResource("Animation_wphr2"),
+"RESET": SubResource("Animation_5wpdv")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_3yr2n")
+
+[node name="Copyright" type="TextureRect" parent="."]
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("1_lklwh")
+
+[node name="BikeScene" type="Node2D" parent="."]
+visible = false
+
+[node name="Background" type="TextureRect" parent="BikeScene"]
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("2_gn0v0")
+
+[node name="May" type="Node2D" parent="BikeScene"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BikeScene/May"]
+position = Vector2(176, 76)
+sprite_frames = SubResource("SpriteFrames_t3tkp")
+autoplay = "default"
+frame_progress = 0.413151
+centered = false
+
+[node name="Volbeat" type="Node2D" parent="BikeScene"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BikeScene/Volbeat"]
+position = Vector2(80, 48)
+sprite_frames = SubResource("SpriteFrames_x38c3")
+autoplay = "default"
+frame_progress = 0.510175
+
+[node name="Manectric" type="Node2D" parent="BikeScene"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BikeScene/Manectric"]
+position = Vector2(64, 128)
+sprite_frames = SubResource("SpriteFrames_r7h02")
+autoplay = "default"
+frame_progress = 0.366317
+
+[node name="Torchic" type="Node2D" parent="BikeScene"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BikeScene/Torchic"]
+position = Vector2(193, 114)
+sprite_frames = SubResource("SpriteFrames_a2k44")
+autoplay = "default"
+frame_progress = 0.805522
+
+[node name="Flygon" type="Sprite2D" parent="BikeScene"]
+position = Vector2(176, 32)
+texture = ExtResource("8_7bioh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BikeScene"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_33x5d")
+}
+
+[node name="LegendaryScene" type="Node2D" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="LegendaryScene"]
+visible = false
+offset_right = 240.0
+offset_bottom = 160.0
+color = Color(0, 0, 0, 1)
+
+[node name="Background" type="TextureRect" parent="LegendaryScene"]
+visible = false
+offset_top = 32.0
+offset_right = 240.0
+offset_bottom = 128.0
+texture = ExtResource("9_pulri")
+
+[node name="Kyogre" type="Sprite2D" parent="LegendaryScene"]
+visible = false
+position = Vector2(160, -64)
+texture = ExtResource("10_m3614")
+centered = false
+hframes = 3
+vframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LegendaryScene"]
+libraries = {
+"": SubResource("AnimationLibrary_nouq2")
+}
+
+[node name="PressStart" type="Node2D" parent="."]
+visible = false
+
+[node name="Background" type="TextureRect" parent="PressStart"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_tpn4q")
+
+[node name="YellowFlash" type="Sprite2D" parent="PressStart"]
+texture = ExtResource("5_vjq1s")
+centered = false
+
+[node name="Mist" type="Sprite2D" parent="PressStart"]
+modulate = Color(1, 1, 1, 0.509804)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_fsksf")
+texture = ExtResource("6_bkgii")
+centered = false
+offset = Vector2(-8, 0)
+
+[node name="Logo" type="Sprite2D" parent="PressStart"]
+position = Vector2(32, 3)
+texture = ExtResource("6_w3eck")
+centered = false
+
+[node name="Version" type="Sprite2D" parent="PressStart"]
+position = Vector2(69, 53)
+texture = ExtResource("7_bnws3")
+centered = false
+
+[node name="PressStart" type="Sprite2D" parent="PressStart"]
+position = Vector2(75, 105)
+texture = ExtResource("8_pkjor")
+centered = false
+
+[node name="Copyright" type="Sprite2D" parent="PressStart"]
+position = Vector2(48, 144)
+texture = ExtResource("9_box72")
+centered = false
+
+[node name="MistAnimation" type="AnimationPlayer" parent="PressStart"]
+autoplay = "Mist"
+libraries = {
+"": SubResource("AnimationLibrary_a5r0c")
+}
+
+[node name="FlashesAnimation" type="AnimationPlayer" parent="PressStart"]
+autoplay = "Flashes"
+libraries = {
+"": SubResource("AnimationLibrary_mqf6o")
+}
+
+[node name="PressStartAnimation" type="AnimationPlayer" parent="PressStart"]
+autoplay = "PressStart"
+libraries = {
+"": SubResource("AnimationLibrary_iqo1w")
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

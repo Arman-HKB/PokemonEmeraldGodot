@@ -1,0 +1,48 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bn8vmolyc2d7b"]
+
+[ext_resource type="Texture2D" uid="uid://dj1cqxnqkyi4k" path="res://Assets/Pokemons/Battlers/007_mudkip.png" id="1_8rocg"]
+[ext_resource type="Texture2D" uid="uid://c8vfvjmttr0s1" path="res://Assets/Pokemons/Icons/007_mudkip.png" id="2_ui031"]
+[ext_resource type="Script" path="res://Scripts/Pokemon/pokemon_data.gd" id="3_4fyfq"]
+
+[resource]
+script = ExtResource("3_4fyfq")
+battlers = ExtResource("1_8rocg")
+icons = ExtResource("2_ui031")
+name = "MUDKIP"
+pokedex_number = "007"
+pokedex_entry = "On land, it can powerfully lift large boulders by planting its four feet and heaving. It sleeps by burying itself in soil at the water's edge."
+height = "1'04\""
+weight = "16.8 lbs."
+type_1 = 11
+type_2 = null
+base_hp = 50
+base_attack = 70
+base_defence = 50
+base_special_attack = 50
+base_special_defence = 50
+base_speed = 40
+friendship = null
+ev_yield_hp = null
+ev_yield_attack = null
+ev_yield_defence = null
+ev_yield_special_attack = null
+ev_yield_special_defence = null
+ev_yield_speed = null
+evolves_at_level = 16
+learnset = null
+nickname = "Muddy"
+nature = null
+ability = null
+gender = null
+level = 5
+hp = null
+attack = null
+defence = null
+special_attack = null
+special_defence = null
+speed = null
+experience = null
+iv = null
+ev = null
+condition = null
+moves = null

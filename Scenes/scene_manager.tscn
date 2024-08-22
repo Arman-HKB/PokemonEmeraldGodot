@@ -1,0 +1,151 @@
+[gd_scene load_steps=13 format=3 uid="uid://d3blluk8vis7j"]
+
+[ext_resource type="Script" path="res://Scripts/scene_manager.gd" id="1_hauqo"]
+[ext_resource type="PackedScene" uid="uid://c6siqipv3e2p2" path="res://Scenes/map.tscn" id="1_l6p5h"]
+[ext_resource type="Texture2D" uid="uid://bxwmvgcsrp5oj" path="res://Assets/Tilesets/locations.png" id="3_nnf5k"]
+[ext_resource type="PackedScene" uid="uid://dne0d8s82ydcp" path="res://Scenes/menu.tscn" id="3_pajr8"]
+[ext_resource type="PackedScene" uid="uid://633lu8qvrtk5" path="res://Scenes/dialog_box.tscn" id="5_2v8de"]
+
+[sub_resource type="Animation" id="Animation_4ofuj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -36)]
+}
+
+[sub_resource type="Animation" id="Animation_qibrs"]
+resource_name = "ShowFrame"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -36), Vector2(0, 0), Vector2(0, 0), Vector2(0, -36)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_12ykf"]
+_data = {
+"RESET": SubResource("Animation_4ofuj"),
+"ShowFrame": SubResource("Animation_qibrs")
+}
+
+[sub_resource type="Animation" id="Animation_ndlal"]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"finished_fading"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qsatt"]
+resource_name = "FadeOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_52rxl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cs06p"]
+_data = {
+"FadeIn": SubResource("Animation_ndlal"),
+"FadeOut": SubResource("Animation_qsatt"),
+"RESET": SubResource("Animation_52rxl")
+}
+
+[node name="SceneManager" type="Node2D"]
+script = ExtResource("1_hauqo")
+
+[node name="Current" type="Node2D" parent="."]
+
+[node name="Map" parent="Current" instance=ExtResource("1_l6p5h")]
+
+[node name="Location" type="CanvasLayer" parent="."]
+
+[node name="Frame" type="Sprite2D" parent="Location"]
+z_index = 99
+position = Vector2(0, -36)
+texture = ExtResource("3_nnf5k")
+centered = false
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Location"]
+libraries = {
+"": SubResource("AnimationLibrary_12ykf")
+}
+
+[node name="Menu" parent="." instance=ExtResource("3_pajr8")]
+
+[node name="Transition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Transition"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_cs06p")
+}
+
+[node name="DialogBox" parent="." instance=ExtResource("5_2v8de")]

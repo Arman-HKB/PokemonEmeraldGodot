@@ -1,0 +1,147 @@
+[gd_scene load_steps=9 format=3 uid="uid://c1v8kago2jmwd"]
+
+[ext_resource type="Texture2D" uid="uid://ckt8uk5t3aclk" path="res://Assets/UI/Battle/arena_grass_2.png" id="1_n20pb"]
+[ext_resource type="Texture2D" uid="uid://xlauoaf2xul0" path="res://Assets/UI/Battle/arena_grass_2_floor.png" id="2_rt53v"]
+[ext_resource type="Texture2D" uid="uid://dj1cqxnqkyi4k" path="res://Assets/Pokemons/Battlers/007_mudkip.png" id="3_dwg4c"]
+[ext_resource type="Texture2D" uid="uid://c13f1gtj36c5e" path="res://Assets/UI/Battle/background_menu.png" id="3_gr5s0"]
+[ext_resource type="Texture2D" uid="uid://cykvsybe0ebiq" path="res://Assets/Pokemons/Battlers/010_poochyena.png" id="4_gvx4k"]
+[ext_resource type="Texture2D" uid="uid://cct6b1s3xhoim" path="res://Assets/UI/menu_box.png" id="6_oyjmn"]
+[ext_resource type="FontFile" uid="uid://ctb24xa04mkmg" path="res://Assets/UI/pkmnfl.ttf" id="7_r2i4f"]
+[ext_resource type="Texture2D" uid="uid://bk1aubdji4i0r" path="res://Assets/UI/Battle/menu_cursor.png" id="8_1gfap"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_n20pb")
+
+[node name="PlayerSide" type="Node2D" parent="."]
+
+[node name="Floor" type="TextureRect" parent="PlayerSide"]
+offset_top = 98.0
+offset_right = 128.0
+offset_bottom = 138.0
+texture = ExtResource("2_rt53v")
+
+[node name="Pokemon" type="Sprite2D" parent="PlayerSide"]
+position = Vector2(45, 48)
+texture = ExtResource("3_dwg4c")
+centered = false
+hframes = 2
+vframes = 2
+frame = 2
+
+[node name="EnemySide" type="Node2D" parent="."]
+
+[node name="Floor" type="TextureRect" parent="EnemySide"]
+offset_left = 112.0
+offset_top = 48.0
+offset_right = 240.0
+offset_bottom = 88.0
+texture = ExtResource("2_rt53v")
+
+[node name="Pokemon" type="Sprite2D" parent="EnemySide"]
+position = Vector2(144, 26)
+texture = ExtResource("4_gvx4k")
+centered = false
+hframes = 2
+vframes = 2
+
+[node name="MenuBackground" type="TextureRect" parent="."]
+offset_top = 112.0
+offset_right = 240.0
+offset_bottom = 160.0
+texture = ExtResource("3_gr5s0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 91.0
+offset_top = 112.0
+offset_right = 211.0
+offset_bottom = 160.0
+grow_horizontal = 0
+scale = Vector2(1.24, 1)
+texture = ExtResource("6_oyjmn")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 15.3226
+offset_top = 10.0
+offset_right = 119.323
+offset_bottom = 50.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_constants/separation = 3
+metadata/_edit_group_ = true
+
+[node name="FightLabel" type="Label" parent="Control/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("7_r2i4f")
+theme_override_font_sizes/font_size = 12
+text = "FIGHT"
+
+[node name="PokemonLabel" type="Label" parent="Control/NinePatchRect/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("7_r2i4f")
+theme_override_font_sizes/font_size = 12
+text = "POKéMON"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/NinePatchRect/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_constants/separation = 3
+metadata/_edit_group_ = true
+
+[node name="BagLabel" type="Label" parent="Control/NinePatchRect/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("7_r2i4f")
+theme_override_font_sizes/font_size = 12
+text = "BAG"
+
+[node name="RunLabel" type="Label" parent="Control/NinePatchRect/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.290196, 0.290196, 0.290196, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = ExtResource("7_r2i4f")
+theme_override_font_sizes/font_size = 12
+text = "RUN"
+
+[node name="Cursor" type="TextureRect" parent="Control/NinePatchRect"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 14.0
+offset_bottom = 20.0
+texture = ExtResource("8_1gfap")

@@ -1,0 +1,192 @@
+[gd_scene load_steps=13 format=3 uid="uid://633lu8qvrtk5"]
+
+[ext_resource type="Script" path="res://Scripts/dialog_box.gd" id="1_gf8o7"]
+[ext_resource type="Texture2D" uid="uid://cdjpgeu033dhp" path="res://Assets/UI/Dialog/dialog_box.png" id="1_pmmu6"]
+[ext_resource type="Texture2D" uid="uid://bx0tl7gdldftk" path="res://Assets/UI/Dialog/next_dialog.png" id="3_1fk34"]
+[ext_resource type="FontFile" uid="uid://cokxylgdsfpr7" path="res://Assets/Fonts/pkmnem.ttf" id="3_aom0w"]
+
+[sub_resource type="FontVariation" id="FontVariation_uwvld"]
+base_font = ExtResource("3_aom0w")
+
+[sub_resource type="Animation" id="Animation_iod0l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(220, 144)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_grif8"]
+resource_name = "RevealAll"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"line_complete"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ekjcf"]
+resource_name = "RevealLetterByLetter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"line_complete"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4k77"]
+_data = {
+"RESET": SubResource("Animation_iod0l"),
+"RevealAll": SubResource("Animation_grif8"),
+"RevealLetterByLetter": SubResource("Animation_ekjcf")
+}
+
+[sub_resource type="Animation" id="Animation_ic3ta"]
+resource_name = "NextDialogIcon"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(220, 143), Vector2(220, 145)]
+}
+
+[sub_resource type="Animation" id="Animation_17nto"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NextIcon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(220, 143)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxnts"]
+_data = {
+"NextDialogIcon": SubResource("Animation_ic3ta"),
+"RESET": SubResource("Animation_17nto")
+}
+
+[node name="DialogBox" type="CanvasLayer"]
+script = ExtResource("1_gf8o7")
+path = "res://Scripts/json/dialogs.json"
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = 115.0
+offset_right = 239.0
+offset_bottom = 157.0
+texture = ExtResource("1_pmmu6")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 123.0
+offset_right = 216.0
+offset_bottom = 147.0
+theme_override_colors/font_color = Color(0.388235, 0.388235, 0.388235, 1)
+theme_override_colors/font_shadow_color = Color(0.839216, 0.839216, 0.807843, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("FontVariation_uwvld")
+theme_override_font_sizes/font_size = 12
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vestibulum,"
+vertical_alignment = 3
+autowrap_mode = 3
+max_lines_visible = 2
+visible_characters = 0
+visible_characters_behavior = 1
+visible_ratio = 0.0
+
+[node name="NextIcon" type="Sprite2D" parent="."]
+position = Vector2(220, 143)
+texture = ExtResource("3_1fk34")
+offset = Vector2(0.5, 0.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c4k77")
+}
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+autoplay = "NextDialogIcon"
+libraries = {
+"": SubResource("AnimationLibrary_kxnts")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

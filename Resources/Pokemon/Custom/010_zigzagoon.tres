@@ -1,0 +1,44 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dl2ux0441xr3k"]
+
+[ext_resource type="Texture2D" uid="uid://b4nb5ii3inxm1" path="res://Assets/Pokemons/Icons/012_zigzagoon.png" id="1_a4273"]
+[ext_resource type="Script" path="res://Scripts/Pokemon/pokemon_data.gd" id="2_d5t6i"]
+
+[resource]
+script = ExtResource("2_d5t6i")
+icons = ExtResource("1_a4273")
+name = "ZIGZAGOON"
+pokedex_number = "010"
+pokedex_entry = "Rubbing its nose against the ground, it always wanders about back and forth in search of something. It is distinguished by the zigzag footprints it leaves."
+height = "1'04\""
+weight = "38.6 lbs."
+type_1 = 1
+type_2 = 0
+base_hp = 38
+base_attack = 38
+base_defence = 41
+base_special_attack = 38
+base_special_defence = 41
+base_speed = 60
+friendship = 0
+ev_yield_hp = 0
+ev_yield_attack = 0
+ev_yield_defence = 0
+ev_yield_special_attack = 0
+ev_yield_special_defence = 0
+ev_yield_speed = 0
+evolves_at_level = 20
+learnset = []
+nickname = ""
+nature = ""
+ability = ""
+gender = 1
+level = 3
+hp = 0
+attack = 0
+defence = 0
+special_attack = 0
+special_defence = 0
+speed = 0
+experience = 0
+condition = 0
+moves = []

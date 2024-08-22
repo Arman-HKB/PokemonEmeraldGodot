@@ -1,0 +1,284 @@
+[gd_scene load_steps=17 format=3 uid="uid://bef0koa5p5rre"]
+
+[ext_resource type="Script" path="res://Scripts/pokemon_party_screen.gd" id="1_e5kjh"]
+[ext_resource type="Texture2D" uid="uid://d4n1u6gddc4v5" path="res://Assets/UI/Party/background.png" id="1_uth0e"]
+[ext_resource type="Texture2D" uid="uid://dy77en5s1ybsj" path="res://Assets/UI/Party/first_slot.png" id="2_thqbc"]
+[ext_resource type="Texture2D" uid="uid://c8vfvjmttr0s1" path="res://Assets/Pokemons/Icons/007_mudkip.png" id="3_888ck"]
+[ext_resource type="Texture2D" uid="uid://gryd2knysdlo" path="res://Assets/UI/Party/item_icon.png" id="5_x0p4f"]
+[ext_resource type="Texture2D" uid="uid://dw0swbdfcgr3b" path="res://Assets/UI/Party/healthbar.png" id="6_o8x6o"]
+[ext_resource type="Texture2D" uid="uid://xcr5qgq3awut" path="res://Assets/UI/Party/gender.png" id="6_rrj01"]
+[ext_resource type="FontFile" uid="uid://dk4eebldubl25" path="res://Assets/Fonts/pkmnems.ttf" id="8_rnc1g"]
+[ext_resource type="Texture2D" uid="uid://cj0id2uly7585" path="res://Assets/UI/Party/second_slot.png" id="9_217b2"]
+[ext_resource type="Texture2D" uid="uid://ccn12fgbwnxkq" path="res://Assets/UI/Party/status.png" id="9_r8ygh"]
+[ext_resource type="Texture2D" uid="uid://b4nb5ii3inxm1" path="res://Assets/Pokemons/Icons/012_zigzagoon.png" id="10_un1u7"]
+[ext_resource type="Texture2D" uid="uid://bhabv3dflponh" path="res://Assets/UI/Party/cancel_button.png" id="12_8lhkk"]
+
+[sub_resource type="FontVariation" id="FontVariation_o1gan"]
+base_font = ExtResource("8_rnc1g")
+
+[sub_resource type="Animation" id="Animation_1t1pa"]
+resource_name = "Idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MonsterMin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_dx36x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MonsterMin:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_no8oo"]
+_data = {
+"Idle": SubResource("Animation_1t1pa"),
+"RESET": SubResource("Animation_dx36x")
+}
+
+[node name="PokemonPartyScreen" type="Node2D"]
+script = ExtResource("1_e5kjh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_uth0e")
+
+[node name="FirstSlot" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="FirstSlot"]
+position = Vector2(2, 18)
+texture = ExtResource("2_thqbc")
+centered = false
+hframes = 2
+
+[node name="MonsterMin" type="Sprite2D" parent="FirstSlot"]
+position = Vector2(0, 22)
+texture = ExtResource("3_888ck")
+centered = false
+offset = Vector2(0, 0.5)
+vframes = 2
+frame = 1
+region_rect = Rect2(32, 9, 70, 23)
+
+[node name="HeldItem" type="Sprite2D" parent="FirstSlot"]
+visible = false
+position = Vector2(17, 47)
+texture = ExtResource("5_x0p4f")
+centered = false
+offset = Vector2(0, 0.5)
+
+[node name="Gender" type="Sprite2D" parent="FirstSlot"]
+position = Vector2(72, 48)
+texture = ExtResource("6_rrj01")
+centered = false
+hframes = 2
+
+[node name="HPBar" type="Sprite2D" parent="FirstSlot"]
+position = Vector2(56, 60.5)
+scale = Vector2(2, 1)
+texture = ExtResource("6_o8x6o")
+region_enabled = true
+region_rect = Rect2(24, 0, 24, 3)
+
+[node name="Name" type="Label" parent="FirstSlot"]
+custom_minimum_size = Vector2(15, 10)
+offset_left = 32.0
+offset_top = 38.0
+offset_right = 62.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.996094, 0.996094, 0.996094, 1)
+theme_override_colors/font_shadow_color = Color(0.449219, 0.449219, 0.449219, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_o1gan")
+theme_override_font_sizes/font_size = 11
+text = "MUDKIP"
+
+[node name="Level" type="Label" parent="FirstSlot"]
+custom_minimum_size = Vector2(15, 10)
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 63.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0.996094, 0.996094, 0.996094, 1)
+theme_override_colors/font_shadow_color = Color(0.449219, 0.449219, 0.449219, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_o1gan")
+theme_override_font_sizes/font_size = 11
+text = "5"
+
+[node name="HP" type="Label" parent="FirstSlot"]
+custom_minimum_size = Vector2(15, 10)
+offset_left = 45.0
+offset_top = 65.0
+offset_right = 60.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.996094, 0.996094, 0.996094, 1)
+theme_override_colors/font_shadow_color = Color(0.449219, 0.449219, 0.449219, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_o1gan")
+theme_override_font_sizes/font_size = 11
+text = "21"
+horizontal_alignment = 2
+
+[node name="MaxHP" type="Label" parent="FirstSlot"]
+custom_minimum_size = Vector2(15, 10)
+offset_left = 64.0
+offset_top = 65.0
+offset_right = 79.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0.996094, 0.996094, 0.996094, 1)
+theme_override_colors/font_shadow_color = Color(0.449219, 0.449219, 0.449219, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_o1gan")
+theme_override_font_sizes/font_size = 11
+text = "21"
+horizontal_alignment = 2
+
+[node name="Status" type="Sprite2D" parent="FirstSlot"]
+visible = false
+position = Vector2(40, 48)
+texture = ExtResource("9_r8ygh")
+centered = false
+offset = Vector2(0, 0.5)
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FirstSlot"]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_no8oo")
+}
+
+[node name="SecondSlot" type="Node2D" parent="."]
+visible = false
+position = Vector2(96, -32)
+
+[node name="Background" type="Sprite2D" parent="SecondSlot"]
+position = Vector2(-8, 41)
+texture = ExtResource("9_217b2")
+centered = false
+hframes = 2
+
+[node name="MonsterMin" type="Sprite2D" parent="SecondSlot"]
+position = Vector2(-11, 40)
+texture = ExtResource("10_un1u7")
+centered = false
+vframes = 2
+frame = 1
+
+[node name="HeldItem" type="Sprite2D" parent="SecondSlot"]
+position = Vector2(9, 57)
+texture = ExtResource("5_x0p4f")
+centered = false
+
+[node name="Gender" type="Sprite2D" parent="SecondSlot"]
+position = Vector2(62, 56)
+texture = ExtResource("6_rrj01")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="HPBar" type="Sprite2D" parent="SecondSlot"]
+position = Vector2(112, 51.5)
+scale = Vector2(2, 1)
+texture = ExtResource("6_o8x6o")
+region_enabled = true
+region_rect = Rect2(24, 0, 24, 3)
+
+[node name="Name" type="Label" parent="SecondSlot"]
+custom_minimum_size = Vector2(15, 10)
+offset_left = 22.0
+offset_top = 47.0
+offset_right = 67.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.996094, 0.996094, 0.996094, 1)
+theme_override_colors/font_shadow_color = Color(0.449219, 0.449219, 0.449219, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_o1gan")
+theme_override_font_sizes/font_size = 10
+text = "ZIGZAGOON"
+
+[node name="Level" type="Label" parent="SecondSlot"]
+custom_minimum_size = Vector2(15, 10)
+offset_left = 38.0
+offset_top = 57.0
+offset_right = 53.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.996094, 0.996094, 0.996094, 1)
+theme_override_colors/font_shadow_color = Color(0.449219, 0.449219, 0.449219, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_o1gan")
+theme_override_font_sizes/font_size = 10
+text = "5"
+
+[node name="HP" type="Label" parent="SecondSlot"]
+custom_minimum_size = Vector2(15, 10)
+offset_left = 102.0
+offset_top = 57.0
+offset_right = 117.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.996094, 0.996094, 0.996094, 1)
+theme_override_colors/font_shadow_color = Color(0.449219, 0.449219, 0.449219, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_o1gan")
+theme_override_font_sizes/font_size = 10
+text = "21"
+horizontal_alignment = 2
+
+[node name="MaxHP" type="Label" parent="SecondSlot"]
+custom_minimum_size = Vector2(15, 10)
+offset_left = 122.0
+offset_top = 57.0
+offset_right = 137.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.996094, 0.996094, 0.996094, 1)
+theme_override_colors/font_shadow_color = Color(0.449219, 0.449219, 0.449219, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_fonts/font = SubResource("FontVariation_o1gan")
+theme_override_font_sizes/font_size = 10
+text = "21"
+horizontal_alignment = 2
+
+[node name="Status" type="Sprite2D" parent="SecondSlot"]
+visible = false
+position = Vector2(40, 48)
+texture = ExtResource("9_r8ygh")
+centered = false
+offset = Vector2(0, 0.5)
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SecondSlot"]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_no8oo")
+}
+
+[node name="OtherSlots" type="Node2D" parent="."]
+
+[node name="Cancel" type="Sprite2D" parent="."]
+position = Vector2(184, 132)
+texture = ExtResource("12_8lhkk")
+centered = false
+hframes = 2
