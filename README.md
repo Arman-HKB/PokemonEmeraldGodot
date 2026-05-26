@@ -1,5 +1,5 @@
 # PokemonEmeraldGodot 
-Pokemon Emerald made with Godot (4.1.1). One day when I was playing with Godot, learning how to use it, I thought, why not remake this classic game! So I extracted all the assets from the original game and started coding. I stopped before finishing the battle feature. This repository doesn't contain copyrighted assets; all of them are pixelated. All credit to Nintedo.
+Pokemon Emerald made with Godot (4.1.1). One day when I was playing with Godot, learning how to use it, I thought, why not remake this classic game! So I extracted all the assets from the original game and started coding. I stopped before finishing the battle feature. This repository doesn't contain copyrighted assets; all of them were pixel blurred. All credit to Nintedo.
 
 ⚠️THIS REPO DO NOT CONTAIN COPYRIGHTED ASSETS⚠️
 
@@ -21,18 +21,18 @@ Pokemon Emerald made with Godot (4.1.1). One day when I was playing with Godot, 
 <img src="https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/map.png" style="width:100%">
 <img src="https://github.com/Arman-HKB/PokemonEmeraldGodot/blob/develop/Demo/mays_chamber.png" style="width:100%">
 
-## DONE & TODO
+## TODO
 - ☑ Menu
 - ☑ Bag (navigation)
 - ☑ Pokemon menu (navigation)
 - ☑ Move, run, jump (over ledge), ride
+- Swimming and diving
 - ☑ Scene transition
 - ☑ Talking to NPC and signs
-- ☑ Dark mode
-- Battle (scene was made, but code and animation not)
+- Battle (scene was made, but no code and animation)
 - Bag (items, uses, sort, drop) 
-- Pokemon detail
-- Sound design
+- Pokemon detail scene
+- BGM and other audios
 - A lot to do 😁
 
 ## How to use
